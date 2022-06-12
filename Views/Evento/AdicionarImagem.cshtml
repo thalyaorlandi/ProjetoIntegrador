@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+@model EventoImagemModel;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Adicionar Imagem</title>
+</head>
+<body>
+    <form method="post" asp-controller="Evento" asp-action="GravarImagem" enctype="multipart/form-data">
+        <input name="idEvento" type="text" value="@Model.IdEvento" hidden />
+        <div>
+            <label>Imagem: </label>
+            <input type="file" name="file"/>
+        </div>
+        <input type="submit" value="Enviar" />
+    </form>
+</body>
+</html>
