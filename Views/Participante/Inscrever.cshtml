@@ -1,0 +1,12 @@
+﻿@model int
+<form asp-controller="Participante" asp-action="Gravar">
+    <input hidden type="number" name="idevento" value="@Model" />
+
+    <label>Nome: </label>
+    <input type="text" name="nome" />
+
+    <label>Email: </label>
+    <input type="text" name="email" />
+
+    <input type="submit" />
+</form>

@@ -42,7 +42,7 @@ namespace ProjetoIntegrador.Controllers
 
         private string ConverterImagemEmArray(IFormFile file)
         {
-            using(MemoryStream stream = new MemoryStream())
+            using (MemoryStream stream = new MemoryStream())
             {
                 file.CopyTo(stream);
                 var array = stream.ToArray();
@@ -50,6 +50,13 @@ namespace ProjetoIntegrador.Controllers
                 string base64 = Convert.ToBase64String(array);
                 return base64;
             }
+        }
+
+        public IActionResult Detalhes(int idEvento)
+        {
+            var evento = _eventoRepositorio.BuscarPorId(idEvento);
+
+            return View(evento);
         }
 
         public IActionResult Index()

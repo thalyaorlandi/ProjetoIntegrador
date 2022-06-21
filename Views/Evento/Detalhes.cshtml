@@ -1,0 +1,11 @@
+﻿
+@model EventoModel
+<main>
+    <h1>@Model.Nome</h1>
+    <img src="data:image/png;base64, @Model.EventoImagem.Imagem" />
+    <p>@Model.Descricao</p>
+    <a asp-controller="Participante" asp-action="Inscrever" asp-route-idEvento="@Model.Id">
+        <button>Inscrever-se</button>
+    </a>
+</main>
+</html>

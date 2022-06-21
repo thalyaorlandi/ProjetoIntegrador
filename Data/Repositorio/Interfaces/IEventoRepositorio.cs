@@ -7,5 +7,6 @@ namespace ProjetoIntegrador.Data.Repositorio
     {
         void Inserir(EventoModel evento);
         List<EventoModel> BuscarEventos();
+        EventoModel BuscarPorId(int idEvento);
     }
 }

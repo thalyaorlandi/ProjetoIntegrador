@@ -1,23 +1,19 @@
-﻿
-@{
-    Layout = null;
+﻿@model List<EventoModel>
+
+
+@foreach (var evento in Model)
+{
+<div class="card" style="width: 18rem;">
+    <a asp-controller="Evento" asp-action="Detalhes" asp-route-idEvento="@evento.Id">
+        <img class="card-img-top" src="data:image/png;base64, @evento.EventoImagem.Imagem" alt="Imagem do evento @evento.Nome">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title">@evento.Nome</h5>
+        <p class="card-text">
+            <img class="icone" src="~/lib/data.png" />  @evento.DataEvento.ToString("dd-MM-yyyy")<br />
+            <img class="icone" src="~/lib/local.png" />  @evento.Cidade - @evento.Estado
+        </p>
+        <a class="btn btn-primary" asp-controller="Evento" asp-action="Detalhes" asp-route-idEvento="@evento.Id">Detalhes</a>
+    </div>
+</div>
 }
-
-<!DOCTYPE html>
-@model List<EventoModel>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    @foreach (var evento in Model)
-    {
-        <div>
-            <p>@evento.Nome</p>
-            <p>@evento.Cidade - @evento.Estado</p>
-        </div>
-    }
-
-</body>
-</html>

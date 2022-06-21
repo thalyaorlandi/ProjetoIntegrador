@@ -21,5 +21,6 @@ namespace ProjetoIntegrador.Models
         public int LotacaoMaxima { get; set; }
         public Status Status { get; set; }
         public Categoria Categoria { get; set; }
+        public virtual EventoImagemModel EventoImagem { get; set; }
     }
 }

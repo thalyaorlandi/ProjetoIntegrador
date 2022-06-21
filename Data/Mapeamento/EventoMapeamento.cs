@@ -26,6 +26,7 @@ namespace ProjetoIntegrador.Data.Mapeamento
             builder.Property(e => e.LotacaoMaxima).HasColumnType("int");
             builder.Property(e => e.Status).HasColumnType("int");
             builder.Property(e => e.Categoria).HasColumnType("int");
+            builder.HasOne(e => e.EventoImagem).WithOne().HasForeignKey<EventoImagemModel>(i => i.IdEvento);
         }
     }
 }
