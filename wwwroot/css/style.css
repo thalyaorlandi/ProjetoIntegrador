@@ -30,8 +30,31 @@
     width: 25%;
 }
 
-.icone{
-    height:1em;
+.icone {
+    height: 1em;
+}
+
+.filtro-evento-div {
+    float: left;
+    vertical-align: middle;
+    width: 15%;
+    margin-left : 1%;
+}
+
+
+.filtro-evento-label {
+    display: block;
+}
+
+.filtro-evento-input {
+    height: 2em;
+    width: 100%;
+    background-color: #60dce4;
+    border-radius: 5px;
+}
+
+.filtro-evento-pesquisar {
+    margin-top: 2rem;
 }
 
 .card-img-top {

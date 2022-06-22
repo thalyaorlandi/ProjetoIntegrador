@@ -15,12 +15,32 @@ namespace ProjetoIntegrador.Data.Repositorio
             _bancoContexto = bancoContexto;
         }
 
-        public List<EventoModel> BuscarEventos()
+        public List<EventoModel> BuscarEventos(EventoModel filtroEvento)
         {
-            return _bancoContexto.Eventos
+            var consulta = _bancoContexto.Eventos
                 .Where(e => e.DataEvento >= DateTime.Now && e.Status == Status.Ativo)
-                .Include(e => e.EventoImagem)
-                .ToList();
+                .Include(e =>e.EventoImagem).AsQueryable();
+
+            if(filtroEvento.DataEvento != DateTime.MinValue)
+            {
+                consulta = consulta.Where(e => e.DataEvento >= filtroEvento.DataEvento);
+            }
+
+            if (filtroEvento.DataTermino != DateTime.MinValue)
+            {
+                consulta = consulta.Where(e => e.DataTermino <= filtroEvento.DataTermino);
+            }
+
+            if (!string.IsNullOrWhiteSpace(filtroEvento.Estado))
+            {
+                consulta = consulta.Where(e => e.Estado.ToUpper() == filtroEvento.Estado.ToUpper());
+            }
+            if (!string.IsNullOrWhiteSpace(filtroEvento.Nome))
+            {
+                consulta = consulta.Where(e => EF.Functions.Like(e.Nome, $"%{filtroEvento.Nome}%"));
+            }
+
+            return consulta.Include(e => e.EventoImagem).ToList();
         }
 
         public EventoModel BuscarPorId(int idEvento)

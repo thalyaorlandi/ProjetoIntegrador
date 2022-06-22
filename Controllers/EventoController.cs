@@ -59,9 +59,9 @@ namespace ProjetoIntegrador.Controllers
             return View(evento);
         }
 
-        public IActionResult Index()
+        public IActionResult Index(EventoModel filtroEvento)
         {
-            var eventos = _eventoRepositorio.BuscarEventos();
+            var eventos = _eventoRepositorio.BuscarEventos(filtroEvento);
             return View(eventos);
         }
 
