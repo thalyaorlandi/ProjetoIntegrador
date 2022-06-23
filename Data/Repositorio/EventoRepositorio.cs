@@ -28,7 +28,7 @@ namespace ProjetoIntegrador.Data.Repositorio
 
             if (filtroEvento.DataTermino != DateTime.MinValue)
             {
-                consulta = consulta.Where(e => e.DataTermino <= filtroEvento.DataTermino);
+                consulta = consulta.Where(e => e.DataEvento <= filtroEvento.DataTermino);
             }
 
             if (!string.IsNullOrWhiteSpace(filtroEvento.Estado))

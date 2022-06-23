@@ -1,7 +1,17 @@
-﻿
-<form asp-controller="Organizador" asp-action="Autenticar">
-    <label>Informe o código de organizador: </label>
-    <input type="password" name="codigo" />
-
-    <input type="submit" value="Entrar" />
-</form>
+﻿@{
+    Layout = "../Shared/_Layout-Organizador.cshtml";
+}
+<main>
+    
+    <form class="form-organizador" asp-controller="Organizador" asp-action="Autenticar">
+        <div class="form-item">
+            <label class="texto-organizador" style="font-size:2rem">Insira o código: </label>
+        </div>
+        <div class="form-item">
+            <input type="password" name="codigo" />
+        </div>
+        <div class="form-item form-organizador-botao">
+            <input class="texto-organizador" type="submit" value="Entrar" />
+        </div>
+    </form>
+</main>

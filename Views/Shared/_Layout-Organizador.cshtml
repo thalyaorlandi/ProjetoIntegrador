@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br" style="background: url(https://localhost:44332/lib/background-organizador.png); 
+    background-size: cover; background-repeat: no-repeat; ">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titan+One">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<body style="background: none">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light box-shadow">
+            <div class="container">
+                <a class="navbar-brand botao-logo" asp-area="" asp-controller="Home" asp-action="Index" style="color:white">Get Together   </a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" asp-area="" asp-controller="Organizador" asp-action="Entrar">ORGANIZADOR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main style="text-align:center;">
+        <h1 class="texto-organizador">DIVULGUE SEU EVENTO AQUI!</h1>
+        @RenderBody()
+    </main>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

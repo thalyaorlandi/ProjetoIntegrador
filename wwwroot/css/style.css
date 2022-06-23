@@ -38,7 +38,7 @@
     float: left;
     vertical-align: middle;
     width: 15%;
-    margin-left : 1%;
+    margin-left: 1%;
 }
 
 
@@ -74,3 +74,43 @@
         width: 90%;
         margin: auto;
     }
+
+.botao-logo {
+    padding-right: 1rem;
+    font-family: 'Titan One';
+    border-right: 2px solid white;
+}
+
+.texto-organizador {
+    color: white;
+}
+
+.form-organizador {
+    margin-top: 10%;
+}
+
+    .form-organizador * {
+        width: 65%;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .form-organizador input[type=submit] {
+        width: 40%;
+        background-color: #470841;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .form-organizador input[type=submit]:hover {
+            background-color: #112b42;
+        }
+
+.form-item {
+    margin-bottom: 3rem;
+}
+
