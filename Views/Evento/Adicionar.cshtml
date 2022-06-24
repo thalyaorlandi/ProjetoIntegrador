@@ -1,77 +1,105 @@
-﻿<div class="form-evento">
+﻿<div class="div-form-evento">
     @model EventoModel
-    <form method="post" asp-controller="Evento" asp-action="Inserir">
-        <label for="nome">Nome: </label>
-        <input name="nome" type="text" asp-for="Nome" />
-        <div>
-            <label for="dataInicio">Início do evento: </label>
-            <input name="DataEvento" type="date" asp-for="DataEvento" />
-            <input name="horarioInicio" type="time" asp-for="HorarioInicio" />
+    <form class="form-evento" method="post" asp-controller="Evento" asp-action="Inserir">
+        <div class="form-row">
+            <div class="col">
+                <input class="form-control" name="nome" type="text" asp-for="Nome" placeholder="Nome" />
+            </div>
+            <div class="col">
+                <select class="form-control" name="categoria" asp-for="Categoria">
+                    <option selected value="" disabled>Categoria...</option>
+                    <option value="0">Entretenimento</option>
+                    <option value="1">Educacional</option>
+                    <option value="2">Corporativo</option>
+                </select>
+            </div>
         </div>
-
-        <div>
-            <label for="dataTermino">Término do evento: </label>
-            <input name="dataTermino" type="date" asp-for="DataTermino" />
-            <input name="horarioTermino" type="time" asp-for="HorarioTermino" />
+        <div class="form-row">
+            <div class="col">
+                <textarea class="form-control" name="descricao" cols="50" rows="5" asp-for="Descricao" placeholder="Descrição do evento..."></textarea>
+            </div>
         </div>
+        <div class="form-row">
+            <div class="col">
+                <input id="datainicio" class="form-control" name="DataEvento" type="text" asp-for="DataEvento" placeholder="Início do Evento..." />
+                <script>
+                    var dtt = document.getElementById('datainicio')
+                    dtt.onfocus = function (event) {
+                        this.type = 'datetime-local';
+                        this.focus();
+                    }
+                    dtt.onblur = function (event) {
+                        if (dtt.value == '') {
+                            this.type = 'text'
+                        }
+                    }
+                </script>
+            </div>
+            <div class="col">
+                <input id="datatermino" class="form-control" name="DataEvento" type="text" asp-for="DataEvento" placeholder="Término do Evento..." />
+                <script>
+                    var dtt = document.getElementById('datatermino')
+                    dtt.onfocus = function (event) {
+                        this.type = 'datetime-local';
+                        this.focus();
+                    }
+                    dtt.onblur = function (event) {
+                        if (dtt.value == '') {
+                            this.type = 'text'
+                        }
+                    }
+                </script>
 
-        <select name="categoria" asp-for="Categoria">
-            <option value="-1">Selecione...</option>
-            <option value="0">Entretenimento</option>
-            <option value="1">Educacional</option>
-            <option value="2">Corporativo</option>
-        </select>
-
-        <label>Lotação máxima: </label>
-        <input type="number" name="lotacaoMaxima" asp-for="LotacaoMaxima" />
-
-        <label for="descricao">Descrição: </label>
-        <textarea name="descricao" cols="50" rows="5" asp-for="Descricao"></textarea>
-
-        <div>
-            <label for="endereco">Endereco: </label>
-            <input name="endereco" type="text" asp-for="Endereco"/>
-
-            <label for="numero">Nº: </label>
-            <input for="numero" type="text" asp-for="Numero" />
+            </div>
+            <div class="col">
+                <input class="form-control" type="number" name="lotacaoMaxima" asp-for="LotacaoMaxima" placeholder="Lotação máxima..." />
+            </div>
         </div>
-
-        <div>
-            <label for="cidade">Cidade: </label>
-            <input name="cidade" asp-for="Cidade" />
-            
-            <label for="estado">Estado: </label>
-            <select name="estado" asp-for="Estado">
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RN">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-                <option value="DF">Distrito Federal</option>
-            </select>
+        <div class="form-row">
+            <div class="col">
+                <input class="form-control" name="endereco" type="text" asp-for="Endereco" placeholder="Endereco..." />
+            </div>
+            <div class="col">
+                <input class="form-control" for="numero" type="text" asp-for="Numero" placeholder="Número..." />
+            </div>
         </div>
-
-        <input type="submit" value="Gravar" />
+        <div class="form-row">
+            <div class="col">
+                <input class="form-control" type="text" name="cidade" asp-for="Cidade" placeholder="Cidade..." />
+            </div>
+            <div class="col">
+                <select class="form-control" name="estado" asp-for="Estado">
+                    <option value="" disabled selected>Estado...</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RN">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    <option value="DF">Distrito Federal</option>
+                </select>
+            </div>
+        </div>
+        <input class="botao-evento" type="submit" value="Gravar" />
     </form>
 </div>

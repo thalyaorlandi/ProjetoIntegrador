@@ -69,6 +69,8 @@ namespace ProjetoIntegrador.Controllers
         {
             evento.Status = Status.Ativo;
             evento.DataCadastro = DateTime.Now;
+            evento.HorarioInicio = evento.DataEvento.TimeOfDay;
+            evento.HorarioTermino = evento.DataTermino.TimeOfDay;
 
             _eventoRepositorio.Inserir(evento);
 

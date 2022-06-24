@@ -2,7 +2,7 @@
     background-color: #60dce4;
 }
 
-.form-evento {
+.div-form-evento {
     text-align: center;
 }
 
@@ -15,6 +15,12 @@
 .col-25 {
     float: left;
     width: 25%;
+    margin-top: 6px;
+}
+
+.col-50 {
+    float: left;
+    width: 50%;
     margin-top: 6px;
 }
 
@@ -95,22 +101,44 @@
         text-align: center;
     }
 
-    .form-organizador input[type=submit] {
-        width: 40%;
-        background-color: #470841;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+.botao-organizador {
+    width: 40%;
+    background-color: #470841;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .botao-organizador:hover {
+        background-color: #112b42;
     }
 
-        .form-organizador input[type=submit]:hover {
-            background-color: #112b42;
-        }
+.botao-evento {
+    width: 40%;
+    background-color: #424bb2;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    .botao-evento:hover {
+        background-color: #0ca788;
+    }
 
 .form-item {
     margin-bottom: 3rem;
 }
 
+.form-evento * {
+    margin: 1%;
+}
+
+.form-control {
+    border-color: #232927;
+}
