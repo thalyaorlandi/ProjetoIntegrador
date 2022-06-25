@@ -1,11 +1,22 @@
 ﻿
 @model EventoModel
-<main>
-    <h1>@Model.Nome</h1>
-    <img src="data:image/png;base64, @Model.EventoImagem.Imagem" />
-    <p>@Model.Descricao</p>
-    <a asp-controller="Participante" asp-action="Inscrever" asp-route-idEvento="@Model.Id">
-        <button>Inscrever-se</button>
-    </a>
-</main>
-</html>
+<body>
+    <main class="evento-body">
+        <div class="evento-detalhes">
+            <h1>@Model.Nome</h1>
+            <img class="rounded float-start" src="data:image/png;base64, @Model.EventoImagem.Imagem" />
+            <p>
+                <img class="icone" src="~/lib/data.png" style="max-width: 1em" />  @Model.DataEvento.ToString("dd-MM-yyyy") @Model.HorarioInicio.ToString(@"hh\:mm")
+                - @Model.DataTermino.ToString("dd-MM-yyyy") @Model.HorarioTermino.ToString(@"hh\:mm")<br />
+                <img class="icone" src="~/lib/local.png" style="max-width: 1em" />@Model.Endereco, @Model.Numero - @Model.Cidade - @Model.Estado
+            </p>
+            <p>@Model.Descricao</p>
+        </div>
+        <div class="div-form-evento">
+            <form asp-controller="Participante" asp-action="Inscrever">
+                <input hidden value="@Model.Id" name="idEvento" />
+                <input class="botao-evento" type="submit" value="Inscrever-se" style="margin: 5em; width:30%" />
+            </form>
+        </div>
+    </main>
+</body>

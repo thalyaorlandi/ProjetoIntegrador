@@ -1,18 +1,11 @@
-﻿<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Adicionar Imagem</title>
-</head>
-<body>
-    <form method="post" asp-controller="Evento" asp-action="GravarImagem" enctype="multipart/form-data">
+﻿
+<div class="div-form-evento">
+    <form class="form-evento" method="post" asp-controller="Evento" asp-action="GravarImagem" enctype="multipart/form-data">
         <input name="idEvento" type="text" value="@Model.IdEvento" hidden />
-        <div>
-            <label>Imagem: </label>
-            <input type="file" name="file"/>
+        <div class="mb-3">
+            <label for="file" class="form-label">Selecione uma imagem para o evento...</label>
+            <input class="form-control-file" type="file" id="file" name="file">
         </div>
-        <input type="submit" value="Enviar" />
+        <input class="botao-evento" type="submit" value="Gravar" />
     </form>
-</body>
-</html>
+</div>

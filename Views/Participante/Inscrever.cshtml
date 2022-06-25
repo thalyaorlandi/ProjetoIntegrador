@@ -1,12 +1,18 @@
 ﻿@model int
-<form asp-controller="Participante" asp-action="Gravar">
-    <input hidden type="number" name="idevento" value="@Model" />
-
-    <label>Nome: </label>
-    <input type="text" name="nome" />
-
-    <label>Email: </label>
-    <input type="text" name="email" />
-
-    <input type="submit" />
-</form>
+<div class="div-form-evento">
+    <form class="form-evento" asp-controller="Participante" asp-action="Gravar">
+        <input hidden type="number" name="idevento" value="@Model" />
+        <div class="form-row">
+            <div class="col">
+                <input class="form-control" type="text" name="nome" placeholder="Informe seu nome..." required/>
+            </div>
+            <div class="col">
+                <input class="form-control" type="text" name="email" placeholder="Seu E-Mail..." required />
+            </div>
+            <div style="width:25%">
+                <input class="botao-evento" type="submit" value="Enviar"/>
+            </div>
+            
+        </div>
+    </form>
+</div>

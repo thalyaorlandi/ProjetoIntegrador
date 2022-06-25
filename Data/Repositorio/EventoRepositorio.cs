@@ -18,7 +18,7 @@ namespace ProjetoIntegrador.Data.Repositorio
         public List<EventoModel> BuscarEventos(EventoModel filtroEvento)
         {
             var consulta = _bancoContexto.Eventos
-                .Where(e => e.DataEvento >= DateTime.Now && e.Status == Status.Ativo)
+                .Where(e => e.DataEvento >= DateTime.Now && e.Status == Status.Ativo && e.EventoImagem != null)
                 .Include(e =>e.EventoImagem).AsQueryable();
 
             if(filtroEvento.DataEvento != DateTime.MinValue)

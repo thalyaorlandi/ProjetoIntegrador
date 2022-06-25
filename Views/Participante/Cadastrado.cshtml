@@ -1,5 +1,12 @@
-﻿<p>Sua inscrição foi realizada com sucesso!</p>
-
-<a asp-controller="Evento" asp-action="Index">
-    <button>OK</button>
-</a>
+﻿<main>
+    <div class="div-form-evento">
+        <form class="form-organizador" asp-controller="Evento" asp-action="Index">
+            <div class="form-item">
+                <label style="font-size:2rem">Cadastro realizado com sucesso</label>
+            </div>
+            <div class="form-item form-organizador-botao">
+                <input class="botao-evento" type="submit" value="OK" />
+            </div>
+        </form>
+    </div>
+</main>
