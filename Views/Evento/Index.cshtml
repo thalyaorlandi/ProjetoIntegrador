@@ -54,7 +54,7 @@
 
 @foreach (var evento in Model)
 {
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 20rem;">
         <a asp-controller="Evento" asp-action="Detalhes" asp-route-idEvento="@evento.Id">
             <img class="card-img-top" src="data:image/png;base64, @evento.EventoImagem.Imagem" alt="Imagem do evento @evento.Nome">
         </a>

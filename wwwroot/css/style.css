@@ -32,7 +32,7 @@
 
 .card {
     float: left;
-    margin: 4%;
+    margin: 3%;
     width: 25%;
 }
 
@@ -69,11 +69,19 @@
     object-fit: cover;
 }
 
+.card-title {
+    font-size: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
 .card-conteudo {
-    width: 90%;
+    width: 92%;
     position: absolute;
     bottom: 0;
-    margin: 5%;
+    margin: 4%;
 }
 
     .card-conteudo img {
@@ -185,7 +193,7 @@ input[type="file" i] {
 }
 
 .evento-detalhes {
-    text-align:center;
+    text-align: center;
     align-items: center;
 }
 
@@ -194,4 +202,3 @@ input[type="file" i] {
         max-height: 20em;
         margin: 2%;
     }
-

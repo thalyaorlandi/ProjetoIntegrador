@@ -19,9 +19,9 @@ namespace ProjetoIntegrador.Data.Repositorio
         {
             var consulta = _bancoContexto.Eventos
                 .Where(e => e.DataEvento >= DateTime.Now && e.Status == Status.Ativo && e.EventoImagem != null)
-                .Include(e =>e.EventoImagem).AsQueryable();
+                .Include(e => e.EventoImagem).AsQueryable();
 
-            if(filtroEvento.DataEvento != DateTime.MinValue)
+            if (filtroEvento.DataEvento != DateTime.MinValue)
             {
                 consulta = consulta.Where(e => e.DataEvento >= filtroEvento.DataEvento);
             }
